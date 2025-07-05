@@ -1,30 +1,20 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
 
-import besharam from "../assets/besharam.mp3";
+
 import { HomeInfo, Loader, Navbar } from "../components";
 import { soundoff, soundon } from "../assets/icons";
 import { UFO, Bird, Island, Sky, Freeport_space_station_2, StarrySky, Plane } from "../models";
 
 const Home = () => {
-  const audioRef = useRef(new Audio(besharam));
-  audioRef.current.volume = 0.4;
-  audioRef.current.loop = true;
+
 
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
   const [isDayMode, setIsDayMode] = useState(true);
 
-  useEffect(() => {
-    if (isPlayingMusic) {
-      audioRef.current.play();
-    }
 
-    return () => {
-      audioRef.current.pause();
-    };
-  }, [isPlayingMusic]);
 
 
 
