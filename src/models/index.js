@@ -1,6 +1,6 @@
 export { Sky } from '@/models/Sky.jsx';
 export { Bird } from '@/models/Bird.jsx';
-export { Island } from '@/models/island.jsx';
+export { Island } from '@/models/Island.jsx';
 
 export { Fox } from '@/models/Fox.jsx';
 export { Freeport_space_station_2 } from '@/models/Freeport_space_station_2.jsx';
