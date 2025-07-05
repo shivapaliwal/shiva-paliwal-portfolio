@@ -4,7 +4,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import besharam from "../assets/besharam.mp3";
 import { HomeInfo, Loader, Navbar } from "../components";
 import { soundoff, soundon } from "../assets/icons";
-import { UFO, Bird, Island, Sky, Freeport_space_station_2, StarrySky, GroguPram, Plane } from "../models";
+import { UFO, Bird, Island, Sky, Freeport_space_station_2, StarrySky, Plane } from "../models";
 
 const Home = () => {
   const audioRef = useRef(new Audio(besharam));
@@ -26,20 +26,7 @@ const Home = () => {
     };
   }, [isPlayingMusic]);
 
-  const adjustGroguPramForScreenSize = () => {
-    let screenScale, screenPosition;
 
-    // If screen width is less than 768px, adjust the scale and position
-    if (window.innerWidth < 768) {
-      screenScale = [1, 1, 1];
-      screenPosition = [0, -3, -43.4];
-    } else {
-      screenScale = [2, 2, 2];
-      screenPosition = [0, -4, -43.4];
-    }
-
-    return [screenScale, screenPosition];
-  };
 
   const adjustPlaneForScreenSize = () => {
     let screenScale, screenPosition;
@@ -69,7 +56,7 @@ const Home = () => {
     return [screenScale, screenPosition];
   };
 
-  const [groguPramScale, groguPramPosition] = adjustGroguPramForScreenSize();
+
   const [planeScale, planePosition] = adjustPlaneForScreenSize();
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
@@ -125,12 +112,7 @@ const Home = () => {
             rotation={[0.1, 4.7077, 0]}
             scale={islandScale}
           />
-          <GroguPram
-            isRotating={isRotating}
-            position={groguPramPosition}
-            rotation={[0, 0, 0]}
-            scale={groguPramScale}
-          />
+
           <Plane
             isRotating={isRotating}
             position={planePosition}
