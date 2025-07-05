@@ -1,9 +1,8 @@
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
-
+import { Suspense, useState } from "react";
 
 import { HomeInfo, Loader, Navbar } from "../components";
-import { soundoff, soundon } from "../assets/icons";
+
 import { UFO, Bird, Island, Sky, Freeport_space_station_2, StarrySky, Plane } from "../models";
 
 const Home = () => {
@@ -11,7 +10,7 @@ const Home = () => {
 
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+
   const [isDayMode, setIsDayMode] = useState(true);
 
 
@@ -112,14 +111,7 @@ const Home = () => {
         </Suspense>
       </Canvas>
 
-      <div className='absolute bottom-2 left-2'>
-        <img
-          src={!isPlayingMusic ? soundoff : soundon}
-          alt='jukebox'
-          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-          className='w-10 h-10 cursor-pointer object-contain'
-        />
-      </div>
+
     </section>
   );
 };
