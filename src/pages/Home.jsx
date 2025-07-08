@@ -11,7 +11,7 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
 
-  const [isDayMode, setIsDayMode] = useState(true);
+  const [isDayMode, setIsDayMode] = useState(false);
 
 
 
